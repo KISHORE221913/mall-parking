@@ -121,7 +121,7 @@ def entry(request):
             message,
             'jeffkishore19@gmail.com',   # verified sender
             [vehicle.email],
-            fail_silently=False,
+            fail_silently=True,
         )
 
         return render(request, "success.html", {"v": vehicle})
