@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Mall Parking</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #007bff, #00c6ff);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 350px;
+            margin: 120px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2> Login</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Username</label>
+        <input name="username" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+</div>
+
+</body>
+</html>

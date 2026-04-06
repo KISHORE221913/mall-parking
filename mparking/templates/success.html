@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Parked</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .ticket {
+            background-color: #e9f7ef;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2> Vehicle Parked</h2>
+
+    <div class="ticket">
+        <div class="info"><span class="highlight">Ticket ID:</span> {{ v.ticket_id }}</div>
+        <div class="info"><span class="highlight">Vehicle:</span> {{ v.vehicle_number }}</div>
+        <div class="info"><span class="highlight">Slot:</span> {{ v.slot }}</div>
+        <div class="info"><span class="highlight">Floor:</span> {{ v.floor }}</div>
+        <div class="info"><span class="highlight">Entry Time:</span> {{ v.entry_time }}</div>
+    </div>
+
+    <a href="/home/" class="btn">Back to Home</a>
+</div>
+
+</body>
+</html>

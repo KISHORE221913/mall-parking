@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Exit</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #c82333;
+        }
+
+        .error {
+            color: red;
+            text-align: center;
+        }
+
+        .btn-back {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .btn-back:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2> Vehicle Exit</h2>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Ticket ID</label>
+        <input name="ticket" required>
+
+        <label>Exit Time (HH:MM)</label>
+        <input name="exit_time" placeholder="e.g. 14:30" required>
+
+        <button type="submit">Exit Vehicle</button>
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    <a href="/home/" class="btn-back">← Back to Home</a>
+</div>
+
+</body>
+</html>
