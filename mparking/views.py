@@ -99,8 +99,8 @@ Entry Time: {vehicle.entry_time}
             sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
 
             email_msg = Mail(
-                from_email='your_verified_sendgrid_email',
-                to_emails='jeffkishore19@gmail.com',  # TEMP test email
+                from_email='jeffkishore19@gmail.com',
+                to_emails=vehicle.email,  # TEMP test email
                 subject='Parking Ticket',
                 plain_text_content=message
             )
